@@ -1,0 +1,30 @@
+{
+  "USERNAME": {
+    "locatorType": "css",
+    "locatorValue": "#email"
+  },
+  "PASSWORD": {
+    "locatorType": "css",
+    "locatorValue": "#password"
+  },
+  "CONFIRM_COOKIE": {
+    "locatorType": "css",
+    "locatorValue": ".bh-button__label.typography--button-link-small"
+  },
+  "AVATAR": {
+    "locatorType": "css",
+    "locatorValue": ".bh-avatar__initials"
+  },
+  "LOGOUT": {
+    "locatorType": "xpath",
+    "locatorValue": "//span[text()='Logout']"
+  },
+  "CONFIRM_LOGOUT": {
+    "locatorType": "id",
+    "locatorValue": "submitButton"
+  },
+  "NEXT_BUTTON": {
+    "locatorType": "css",
+    "locatorValue": "#formSubmitBtn"
+  }
+}
