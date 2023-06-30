@@ -1,2 +1,2 @@
-# EnterpriseInsight_Automation
-EnterpriseInsight_Automation E2E
+# CCUS_Automation
+CCUS Test Automation
