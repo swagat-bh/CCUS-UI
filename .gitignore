@@ -3,6 +3,7 @@
 *.log
 *.class
 *.jar
+*.zip
 dist/
 dist_old
 build/
