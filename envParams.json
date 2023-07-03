@@ -1,0 +1,75 @@
+{
+  "ui": {
+    "driverParams": {
+      "desktop": {
+        "common": {
+          "browsers": {
+            "common": {
+              "cyborg:deleteCookies": true,
+              "acceptInsecureCerts": true,
+              "cyborg:browserSize": "1920,1080",
+              "cyborg:devTools": {
+                "enableBrowserLogs": true
+              },
+              "cyborg:cliArgs": [
+                "--no-sandbox",
+                "--disable-extensions",
+                "--disable-dev-shm-usage",
+                "--start-maximized",
+                "--incognito",
+                "--remote-allow-origins=*"
+              ],
+              "cyborg:LoggingEnabled": true,
+              "cyborg:downloadDirectory": "downloads"
+            },
+            "chrome": {
+              "cyborg:comment": "for headless mode refer TODO.Read"
+            }
+          }
+        },
+        "win": {
+          "browsers": {
+            "chrome": {
+              "browserVersion": "",
+              "cyborg:comment": {
+                "browserVersion": "OPTIONAL the specific version of the browser",
+                "cyborg:DriverPathSpec": "OPTIONAL if provided it is the path to the driver executable"
+              },
+              "cyborg:DriverPathSpec": ""
+            }
+          }
+        }
+      },
+      "useDevice": {
+        "default": "desktop/win/browsers/chrome/default",
+        "HomePage": "desktop/win/browsers/chrome/default",
+        "login": "desktop/win/browsers/chrome/default"
+      }
+    }
+  },
+  "cucumber": {
+    "features": "classpath:Features",
+    "suites": "@Test",
+    "xml": "junit:cucumber-reports/Cucumber.xml",
+    "json": "json:cucumber-reports/Cucumber.json",
+    "html": "html:cucumber-reports/Cucumber.html",
+    "steps": "com.bh.at.step"
+  },
+  "api": {
+    "apis": "resources:Apis",
+    "http": {
+      "ignoreSSL": true
+    }
+  },
+  "data_UI": {
+    "url": "https://ccus.np-0000183.npause1.bakerhughes.com/",
+    "emailId": "",
+    "username": "testuser2",
+    "password": "test@123"
+  },
+    "user1": {
+    "username": "",
+    "password": ""
+  }
+
+}
