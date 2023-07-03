@@ -1,0 +1,27 @@
+{
+  "version": 2,
+  "apiData": {
+    "post:ApplyAnalytics": {
+      "request": {
+        "headers": {
+          "Content-Type": [
+            "application/json"
+          ],
+          "Authorization": [
+            "ToBeReplace"
+          ]
+        },
+        "body": {
+                    "version": 2,
+                    "assetmapping": "assetMapping"
+                }
+      },
+      "response": {
+        "statusCode": "200"
+      }
+    }
+  },
+  "apiName": "ApplyAnalytics",
+  "url": "http://url",
+  "endPoint": "/instances"
+}
