@@ -13,6 +13,13 @@ import static com.bh.at.tester.BaseTester.actions;
 
 public class Login {
 
+    private static Scenario scenario;
+
+    @Before
+    public void beforeStep(Scenario lScenario) {
+        scenario = lScenario;
+    }
+
     static {
         if (Objects.isNull(actions.getCommonUIActions())) {
             actions.setCommonUIActions(new CommonUIAction());
@@ -22,7 +29,9 @@ public class Login {
         @Given("user navigates to CCUS application")
         public void launchApplication() {
 
-            actions.launchApplication();
+            //actions.launchApplication();
+
+            actions.getCommonUIActions().launchApplication();
 
         }
 
