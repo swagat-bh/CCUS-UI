@@ -7,6 +7,8 @@ import com.bh.icommonallutil.IBaseException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import static com.bh.at.core.DriverManager.ElementType.BUTTON;
+import static com.bh.at.core.DriverManager.ElementType.INPUT;
 import static com.bh.at.main.AppConfig.getEnvParam;
 import static com.bh.at.tester.BaseTester.uiAction;
 
@@ -15,6 +17,8 @@ public class CommonUIAction implements ICommonUI {
 
     public static CyBrowserPage appPage = null;
     public static final int defaultTimeout = 10000;
+
+    private final String PAGE = "newLogin";
 
     private static final Logger LOG = LoggerFactory.getLogger(CommonUIActions.class);
 
@@ -58,6 +62,18 @@ public class CommonUIAction implements ICommonUI {
 
     @Override
     public void search() {
+
+    }
+
+    @Override
+    public void logout() {
+        LOG.info("User logged out succesfully ");
+        appPage.pause(defaultTimeout);
+        appPage.getBrowser().switchToMainWindow();
+        uiAction.getElement(INPUT, PAGE, "AVATAR").click();
+        uiAction.getElement(INPUT, PAGE, "LOGOUT").waitForElementTobeDisplayed();
+        uiAction.getElement(INPUT, PAGE, "LOGOUT").jsClick();
+        uiAction.getElement(BUTTON, PAGE, "CONFIRM_LOGOUT").jsClick();
 
     }
 

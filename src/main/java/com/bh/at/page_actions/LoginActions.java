@@ -2,7 +2,6 @@ package com.bh.at.page_actions;
 
 import com.bh.at.iuiutil.IFrame;
 import com.bh.at.page_actions.iActions.ILogin;
-import com.bh.at.tester.BaseTester;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -11,7 +10,6 @@ import static com.bh.at.main.AppConfig.getEnvParam;
 import static com.bh.at.page_actions.CommonUIAction.appPage;
 //import static com.bh.at.page_actions.CommonUIActions.appPage;
 import static com.bh.at.page_actions.CommonUIAction.defaultTimeout;
-import static com.bh.at.tester.BaseConstants.*;
 import static com.bh.at.tester.BaseTester.*;
 
 
@@ -29,7 +27,7 @@ public class LoginActions implements ILogin {
         LOG.info("com.bh.at.step.Login to APM started");
         appPage.pause(3000);
 
-        preLogin();
+      //  preLogin();
 
     }
 
@@ -38,18 +36,36 @@ public class LoginActions implements ILogin {
 
     }
 
-
     @Override
-    public void logOut() {
-        appPage.pause(defaultTimeout);
-        appPage.getBrowser().switchToMainWindow();
+    public void HomePage() {
 
-        System.out.println("Logout----");
-        uiAction.getElement(INPUT, PAGE, "AVATAR").click();
-        uiAction.getElement(INPUT, PAGE, "LOGOUT").waitForElementTobeDisplayed();
-        uiAction.getElement(INPUT, PAGE, "LOGOUT").jsClick();
-        uiAction.getElement(BUTTON, PAGE, "CONFIRM_LOGOUT").jsClick();
-    }
+      LOG.info("Verifying default Homepage of Customer");
+        appPage.pause(5000);
+         appPage.getBrowser().reloadUI();
+        if( appPage.getBrowser().getTitle().equals("CCUS Product"))
+        {
+            if(appPage.getCurrentUrl().contains("config-app")) {
+                try {
+
+                    ((IFrame) uiAction.getElement(FRAME, PAGE, "IFRAME_WRAPPER")).setAsCurrent();
+
+                    while(!uiAction.getElement(DIV, PAGE, "DEFAULT_HOMEPAGE").isDisplayed())
+                    {
+                        appPage.getBrowser().reloadUI();
+                    }
+                    System.out.println( uiAction.getElement(DIV, PAGE, "DEFAULT_HOMEPAGE").getAttribute("data-key"));
+                    LOG.info("User landed on Homepage succesfully");
+                } catch (Exception e) {
+                    LOG.info("User is not landed on Homepage as expected ");
+                }
+            }
+            uiAction.getBrowser().switchToMainWindow();
+        }
+
+        }
+
+
+
 
     @Override
     public void userlogin() {

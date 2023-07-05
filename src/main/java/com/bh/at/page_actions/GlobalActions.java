@@ -24,9 +24,6 @@ public class GlobalActions implements ICommonUI, ILogin{
         this.commonUIAction = commonUIAction;
     }
 
-
-
-
     protected Map<String, Object> oldFilterOptions = new HashMap<>();
     protected Map<String, Object> newFilterOptions = new HashMap<>();
 
@@ -51,9 +48,14 @@ public class GlobalActions implements ICommonUI, ILogin{
     }
 
     @Override
+    public void HomePage() {
+        this.loginActions.HomePage();
+    }
+
+    /*@Override
     public void logOut() {
         this.loginActions.logOut();
-    }
+    }*/
 
     @Override
     public void userlogin() {
@@ -100,6 +102,12 @@ public class GlobalActions implements ICommonUI, ILogin{
 
     public void search() {
         this.commonUIAction.search();
+    }
+
+    @Override
+    public void logout() {
+        this.commonUIAction.logout();
+
     }
 
     @Override

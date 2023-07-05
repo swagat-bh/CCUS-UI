@@ -49,6 +49,11 @@ public class CommonUIActions implements ICommonUI {
   }
 
   @Override
+  public void logout() {
+
+  }
+
+  @Override
   public void launchApplication() {
 
   }

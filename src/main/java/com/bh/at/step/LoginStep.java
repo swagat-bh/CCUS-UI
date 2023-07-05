@@ -1,5 +1,6 @@
 package com.bh.at.step;
 import com.bh.at.page_actions.CommonUIAction;
+import com.bh.at.page_actions.LoginActions;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.en.And;
@@ -11,7 +12,7 @@ import java.util.Objects;
 
 import static com.bh.at.tester.BaseTester.actions;
 
-public class Login {
+public class LoginStep {
 
     private static Scenario scenario;
 
@@ -23,6 +24,12 @@ public class Login {
     static {
         if (Objects.isNull(actions.getCommonUIActions())) {
             actions.setCommonUIActions(new CommonUIAction());
+        }
+    }
+
+    static{
+        if(Objects.isNull(actions.getLogin())) {
+            actions.setLogin(new LoginActions());
         }
     }
 
@@ -40,5 +47,18 @@ public class Login {
 
             actions.userlogin();
 
+    }
+
+    @Then("user should be logged in succesfull and lands on default Homepage")
+    public void userShouldBeLoggedInSuccesfully() {
+
+           actions.HomePage();
+    }
+
+    @And("user logsout succesfully")
+    public void userLogsoutSuccesfully() {
+
+
+        actions.logout();
     }
 }

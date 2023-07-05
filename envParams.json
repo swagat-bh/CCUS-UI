@@ -7,7 +7,7 @@
             "common": {
               "cyborg:deleteCookies": true,
               "acceptInsecureCerts": true,
-              "cyborg:browserSize": "1920,1080",
+              "cyborg:browserSize": "",
               "cyborg:devTools": {
                 "enableBrowserLogs": true
               },
