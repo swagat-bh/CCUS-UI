@@ -37,7 +37,6 @@ public class LoginStep {
         public void launchApplication() {
 
             //actions.launchApplication();
-
             actions.getCommonUIActions().launchApplication();
 
         }
@@ -60,5 +59,11 @@ public class LoginStep {
 
 
         actions.logout();
+    }
+
+    @Then("User attempt to login should be blocked due to invalid credentials")
+    public void userLoginShouldBeBlockedDueToInvalidCredentials() {
+
+        actions.validateLogin();
     }
 }

@@ -20,7 +20,7 @@ public class CommonUIAction implements ICommonUI {
 
     private final String PAGE = "newLogin";
 
-    private static final Logger LOG = LoggerFactory.getLogger(CommonUIActions.class);
+    private static final Logger LOG = LoggerFactory.getLogger(CommonUIAction.class);
 
     private final String url = getEnvParam("data_UI/url", null);
 

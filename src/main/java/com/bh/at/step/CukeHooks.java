@@ -16,7 +16,7 @@ import org.slf4j.LoggerFactory;
 
 import com.bh.at.core.DriverManager;
 
-import static com.bh.at.page_actions.CommonUIActions.appPage;
+import static com.bh.at.page_actions.CommonUIAction.appPage;
 import static com.bh.at.tester.BaseTester.*;
 
 public class CukeHooks {

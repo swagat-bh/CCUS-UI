@@ -1,14 +1,10 @@
 package com.bh.at.page_actions;
 
 
-import com.bh.at.iapiutil.IAPIHelper;
 import com.bh.at.page_actions.iActions.*;
 import com.bh.icommonallutil.IBaseException;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class GlobalActions implements ICommonUI, ILogin{
@@ -28,11 +24,6 @@ public class GlobalActions implements ICommonUI, ILogin{
     protected Map<String, Object> newFilterOptions = new HashMap<>();
 
     //UI override methods to be place below************************************************************
-
-    @Override
-    public void login() {
-        this.loginActions.login();
-    }
 
     public ILogin getLogin() {
         return loginActions;
@@ -117,7 +108,12 @@ public class GlobalActions implements ICommonUI, ILogin{
 
     }
 
+@Override
+    public void validateLogin() {
 
+    this.loginActions.validateLogin();
+
+    }
 }
 
 

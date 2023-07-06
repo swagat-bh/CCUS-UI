@@ -21,16 +21,6 @@ public class LoginActions implements ILogin {
     private final String UN = getEnvParam("data_UI/username", null);
     private final String PASS =getEnvParam("data_UI/password","");
 
-
-    @Override
-    public void login() {
-        LOG.info("com.bh.at.step.Login to APM started");
-        appPage.pause(3000);
-
-      //  preLogin();
-
-    }
-
     @Override
     public void adminLogin() {
 
@@ -77,6 +67,23 @@ public class LoginActions implements ILogin {
             uiAction.getElement(INPUT, PAGE, "USERNAME").sendKeys(getEnvParam("data_UI/username", ""));
             uiAction.getElement(INPUT, PAGE, "PASSWORD").sendKeys(getEnvParam("data_UI/password",""));
             uiAction.getElement(BUTTON, PAGE, "NEXT_BUTTON").click();
+
+        }
+
+
+    }
+
+    @Override
+    public void validateLogin() {
+        LOG.info("com.bh.at.step.Login to CCUS Started ");
+        appPage.pause(3000);
+        if(appPage.getCurrentUrl().contains("login"))
+        {
+            uiAction.getElement(INPUT, PAGE, "USERNAME").sendKeys("Invalid Test");
+            uiAction.getElement(INPUT, PAGE, "PASSWORD").sendKeys("Invalid Password");
+            uiAction.getElement(BUTTON, PAGE, "NEXT_BUTTON").click();
+            uiAction.getElement(TEXT,PAGE,"INVALID_LOGIN_ERROR").waitForElementTobeDisplayed();
+            System.out.println(uiAction.getElement(TEXT,PAGE,"INVALID_LOGIN_ERROR").getText());
 
         }
 

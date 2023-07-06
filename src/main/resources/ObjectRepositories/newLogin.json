@@ -34,5 +34,9 @@
   "IFRAME_WRAPPER": {
     "locatorType": "id",
     "locatorValue": "iframeWrapper"
+  },
+  "INVALID_LOGIN_ERROR": {
+    "locatorType": "id",
+    "locatorValue": "loginError"
   }
 }
