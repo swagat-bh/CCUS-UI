@@ -14,6 +14,8 @@ public interface ICommonUI {
 
   void search();
 
+  void logout();
+
   void launchApplication();
 
   public void auguryLaunchApplication();

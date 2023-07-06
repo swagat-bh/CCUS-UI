@@ -7,7 +7,7 @@
             "common": {
               "cyborg:deleteCookies": true,
               "acceptInsecureCerts": true,
-              "cyborg:browserSize": "1920,1080",
+              "cyborg:browserSize": "",
               "cyborg:devTools": {
                 "enableBrowserLogs": true
               },
@@ -49,7 +49,7 @@
   },
   "cucumber": {
     "features": "classpath:Features",
-    "suites": "@Test",
+    "suites": "@Test or @TestReports",
     "xml": "junit:cucumber-reports/Cucumber.xml",
     "json": "json:cucumber-reports/Cucumber.json",
     "html": "html:cucumber-reports/Cucumber.html",

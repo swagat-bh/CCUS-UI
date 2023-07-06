@@ -26,5 +26,17 @@
   "NEXT_BUTTON": {
     "locatorType": "css",
     "locatorValue": "#formSubmitBtn"
+  },
+  "DEFAULT_HOMEPAGE": {
+    "locatorType": "css",
+    "locatorValue": ".bh-tabs--item.motion--fast.selected.active"
+  },
+  "IFRAME_WRAPPER": {
+    "locatorType": "id",
+    "locatorValue": "iframeWrapper"
+  },
+  "INVALID_LOGIN_ERROR": {
+    "locatorType": "id",
+    "locatorValue": "loginError"
   }
 }
