@@ -1,0 +1,28 @@
+{
+
+  "version": 2,
+  "url": "https://ccus.np-0000183.npause1.bakerhughes.com/",
+  "endPoint": "risk-mgmt-svc/api/v1/risk/register/5",
+  "metaInfo": {},
+  "apiData": {
+    "delete:CreateRISK": {
+  
+      "request": {
+        "headers": {
+          "Content-Type": [ "application/json" ]
+        },
+       
+        "body": {}
+      },
+      "response": {
+        "headers": {},
+        "body": {},
+       
+        "statusCode": "400"
+      }
+    }
+  }
+}
+
+
+
