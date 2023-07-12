@@ -90,6 +90,25 @@ public class GlobalActions implements ICommonUI, ILogin{
         this.commonUIAction.AssetUnmappingFromDifferentSourceSystems(project);
     }
 
+    @Override
+    public void verifyAssetHierarchyview() {
+
+        this.commonUIAction.verifyAssetHierarchyview();
+
+    }
+
+    @Override
+    public void navigateToAssetHierarchyview() {
+        this.commonUIAction.navigateToAssetHierarchyview();
+    }
+
+    @Override
+    public void serachInAssetHierarchyview() {
+
+        this.commonUIAction.serachInAssetHierarchyview();
+
+    }
+
 
     public void search() {
         this.commonUIAction.search();

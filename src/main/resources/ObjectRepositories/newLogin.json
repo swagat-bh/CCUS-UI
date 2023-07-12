@@ -29,7 +29,7 @@
   },
   "DEFAULT_HOMEPAGE": {
     "locatorType": "css",
-    "locatorValue": ".bh-tabs--item.motion--fast.selected.active"
+    "locatorValue": ".mdc-tab.mat-mdc-tab.mat-mdc-focus-indicator.ng-star-inserted.mdc-tab--active.mdc-tab-indicator--active"
   },
   "IFRAME_WRAPPER": {
     "locatorType": "id",

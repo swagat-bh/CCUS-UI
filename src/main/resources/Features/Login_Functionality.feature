@@ -1,6 +1,6 @@
 Feature: Tenant Login Functionality
 
-   @Test@TestReports
+   @Tes
    Scenario:User is able to login to CCUS App with valid credentials
       Given user navigates to CCUS application
       When  user enters username and password

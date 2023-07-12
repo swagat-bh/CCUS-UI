@@ -1,0 +1,22 @@
+{
+  "ASSET_MENU": {
+    "locatorType": "css",
+    "locatorValue": ".asset-menu"
+  },
+  "IFRAME_WRAPPER": {
+    "locatorType": "id",
+    "locatorValue": "assethierarchy"
+  },
+  "ASSET_SEARCH": {
+    "locatorType": "css",
+    "locatorValue": ".mat-mdc-input-element.ng-tns-c6-0"
+  },
+  "ASSET_SEARCH_ICON": {
+    "locatorType": "css",
+    "locatorValue": ".mat-mdc-form-field-icon-prefix.ng-tns-c6-0.ng-star-inserted button"
+  },
+  "ASSET_EXPANDED_NODE": {
+    "locatorType": "css",
+    "locatorValue": ".mat-mdc-tooltip-trigger.expandedNode"
+  }
+}
