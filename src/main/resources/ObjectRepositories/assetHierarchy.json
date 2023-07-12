@@ -1,0 +1,22 @@
+{
+  "ASSET_MENU": {
+    "locatorType": "css",
+    "locatorValue": ".asset-menu"
+  },
+  "IFRAME_WRAPPER": {
+    "locatorType": "id",
+    "locatorValue": "assethierarchy"
+  },
+  "ASSET_SEARCH": {
+    "locatorType": "id",
+    "locatorValue": "mat-input-0"
+  },
+  "ASSET_SEARCH_ICON": {
+    "locatorType": "css",
+    "locatorValue": ".search-icon.mdc-icon-button.mat-mdc-icon-button"
+  },
+  "ASSET_EXPANDED_NODE": {
+    "locatorType": "css",
+    "locatorValue": ".mat-mdc-tooltip-trigger.expandedNode"
+  }
+}

@@ -43,7 +43,7 @@ public class LoginActions implements ILogin {
                     {
                         appPage.getBrowser().reloadUI();
                     }
-                    System.out.println( uiAction.getElement(DIV, PAGE, "DEFAULT_HOMEPAGE").getAttribute("data-key"));
+
                     LOG.info("User landed on Homepage succesfully");
                 } catch (Exception e) {
                     LOG.info("User is not landed on Homepage as expected ");

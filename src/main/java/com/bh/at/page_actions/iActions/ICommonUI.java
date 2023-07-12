@@ -21,4 +21,11 @@ public interface ICommonUI {
   public void auguryLaunchApplication();
   public void performAssetMappingFromDifferentSourceSystems(String project) throws IBaseException;
   public void AssetUnmappingFromDifferentSourceSystems(String project) throws IBaseException;
+
+  public void verifyAssetHierarchyview();
+
+  public void navigateToAssetHierarchyview();
+
+  public void serachInAssetHierarchyview();
+
 }
