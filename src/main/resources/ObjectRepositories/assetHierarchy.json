@@ -8,12 +8,12 @@
     "locatorValue": "assethierarchy"
   },
   "ASSET_SEARCH": {
-    "locatorType": "css",
-    "locatorValue": ".mat-mdc-input-element.ng-tns-c6-0"
+    "locatorType": "id",
+    "locatorValue": "mat-input-0"
   },
   "ASSET_SEARCH_ICON": {
     "locatorType": "css",
-    "locatorValue": ".mat-mdc-form-field-icon-prefix.ng-tns-c6-0.ng-star-inserted button"
+    "locatorValue": ".search-icon.mdc-icon-button.mat-mdc-icon-button"
   },
   "ASSET_EXPANDED_NODE": {
     "locatorType": "css",
