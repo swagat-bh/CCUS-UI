@@ -13,10 +13,15 @@
   },
   "ASSET_SEARCH_ICON": {
     "locatorType": "css",
-    "locatorValue": ".search-icon.mdc-icon-button.mat-mdc-icon-button"
+    "locatorValue": ".search-icon.mdc-icon-button"
   },
   "ASSET_EXPANDED_NODE": {
     "locatorType": "css",
     "locatorValue": ".mat-mdc-tooltip-trigger.expandedNode"
+  },
+  "ASSET_EXPAND_ICON": {
+    "locatorType": "css",
+    "locatorValue": ".mat-mdc-button-persistent-ripple.mdc-icon-button__ripple"
   }
+
 }

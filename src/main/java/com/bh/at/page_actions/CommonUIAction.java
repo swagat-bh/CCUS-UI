@@ -9,8 +9,12 @@ import com.bh.at.uiutil.CyBrowserPage;
 import com.bh.at.uiutil.CyElement;
 import com.bh.at.uiutil.CyElements;
 import com.bh.icommonallutil.IBaseException;
+import org.junit.Assert;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.HashSet;
+import java.util.Set;
 
 import static com.bh.at.core.DriverManager.ElementType.*;
 import static com.bh.at.main.AppConfig.getEnvParam;
@@ -27,6 +31,8 @@ public class CommonUIAction implements ICommonUI {
     private static final Logger LOG = LoggerFactory.getLogger(CommonUIAction.class);
 
     private final String url = getEnvParam("data_UI/url", null);
+
+    private CyElements<IElement> Parentnodes;
 
 
 
@@ -121,24 +127,54 @@ public class CommonUIAction implements ICommonUI {
 
     @Override
     public void navigateToAssetHierarchyview() {
-         uiAction.getElement(DIV, ASSETPAGE, "ASSET_MENU").moveTo().click();
+        uiAction.getElement(DIV, ASSETPAGE, "ASSET_MENU").moveTo().click();
+        ((IFrame) uiAction.getElement(FRAME, ASSETPAGE, "IFRAME_WRAPPER")).setAsCurrent();
+        CyElements<IElement> ele = uiAction.getElements(BUTTON, ASSETPAGE, "ASSET_EXPAND_ICON");
+        int loops=0;
+        while (uiAction.getElements(BUTTON, ASSETPAGE, "ASSET_EXPAND_ICON").hasElements())
+        {
+            uiAction.getElements(IMG,ASSETPAGE, "ASSET_EXPAND_ICON").get(loops).jsClick();
+            appPage.pause(1000);
+            loops++;
+            System.out.println(loops);
+
+            if(loops==(uiAction.getElements(BUTTON, ASSETPAGE, "ASSET_EXPAND_ICON").size()))
+            break;
+
+        }
+
+        Parentnodes=uiAction.getElements(BUTTON, ASSETPAGE, "ASSET_EXPANDED_NODE");
+        appPage.getBrowser().switchToMainWindow();
+
     }
 
     @Override
     public void serachInAssetHierarchyview() {
+        uiAction.getBrowser().reloadUI();
+        uiAction.getElement(DIV, ASSETPAGE, "ASSET_MENU").moveTo().click();
         ((IFrame) uiAction.getElement(FRAME, ASSETPAGE, "IFRAME_WRAPPER")).setAsCurrent();
-        uiAction.getElement(INPUT,ASSETPAGE,"ASSET_SEARCH").sendKeys("Mac");
         appPage.pause(2000);
-        uiAction.getElement(BUTTON,ASSETPAGE,"ASSET_SEARCH_ICON").click();
-        appPage.pause(4000);
+        uiAction.getElement(INPUT,ASSETPAGE,"ASSET_SEARCH").sendKeys("Mac");
+        appPage.pause(5000);
+        uiAction.getElement(BUTTON,ASSETPAGE,"ASSET_SEARCH_ICON").jsClick();
+        appPage.pause(10000);
         CyElements<IElement> ele=uiAction.getElements(TEXT,ASSETPAGE,"ASSET_EXPANDED_NODE");
         LOG.info("----------->Asset Search Results<-----------");
+        Set<String>searchset=new HashSet<>();
+        Set<String>Parentset=new HashSet<>();
        for(IElement Cyele:ele)
-       {if(Cyele.getTextValue().contains("Mac"))
-           {
-               System.out.println(Cyele.getTextValue());
-           }
+       {
+                 searchset.add(Cyele.getTextValue());
        }
+
+        for (IElement Cyele:Parentnodes) {
+                 Parentset.add(Cyele.getTextValue());
+        }
+
+        System.out.println(searchset);
+        System.out.println(Parentset);
+        Assert.assertTrue(Parentset.containsAll(searchset));
+        Assert.assertTrue(searchset.stream().anyMatch(str->str.contains("Mac")));;
         appPage.getBrowser().switchToMainWindow();
     }
 
