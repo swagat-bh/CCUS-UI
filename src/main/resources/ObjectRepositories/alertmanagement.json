@@ -1,0 +1,50 @@
+{
+  "ALERT_HOMEPAGE": {
+    "locatorType": "xpath",
+    "locatorValue": "//span[text()='Alerts Rule Management']"
+  },
+  "CREATE_ALERT_BUTTON": {
+    "locatorType": "xpath",
+    "locatorValue": " //span[text()='Add Alert Rule']"
+  },
+  "CREATE_ALERTUI_ALERTNAME": {
+    "locatorType": "xpath",
+    "locatorValue": "//input[@ng-reflect-name='name']"
+  },
+  "CREATE_ALERTUI_DESCRIPTION": {
+    "locatorType": "xpath",
+    "locatorValue": "//input[@formcontrolname='description']"
+  },
+  "CREATE_ALERTUI_SELECTASSET": {
+    "locatorType": "xpath",
+    "locatorValue": "//input[@formcontrolname='assetStr']"
+  },
+  "CREATE_ALERTUI_PARAMETERS": {
+    "locatorType": "css",
+    "locatorValue": ".mat-mdc-select-trigger"
+  },
+  "CREATE_ALERTUI_THRESHOLD": {
+    "locatorType": "xpath",
+    "locatorValue": "//input[@formcontrolname='threshold']"
+  },
+  "CREATE_ALERT_SEVERITY": {
+    "locatorType": "xpath",
+    "locatorValue": "//*[@formcontrolname='severity']//button"
+  },
+  "CREATE_ALERTRULE_ADD_DELETE_BUTTON": {
+    "locatorType": "css",
+    "locatorValue": ".conditionbox button"
+  },
+  "CREATE_ALERTRULE_CREATE_CANCEL": {
+    "locatorType": "css",
+    "locatorValue": ".mat-mdc-card-content.footer button"
+  },
+  "ALERT_PARAM_DURATION": {
+    "locatorType": "xpath",
+    "locatorValue": "//input[@formcontrolname='duration']"
+  },
+  "IFRAME_WRAPPER": {
+    "locatorType": "id",
+    "locatorValue": "iframeWrapper"
+  }
+}

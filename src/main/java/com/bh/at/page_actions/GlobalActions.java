@@ -1,16 +1,29 @@
 package com.bh.at.page_actions;
 
 
-import com.bh.at.page_actions.iActions.*;
+import com.bh.at.page_actions.iActions.IAlertmanagementUI;
+import com.bh.at.page_actions.iActions.ICommonUI;
+import com.bh.at.page_actions.iActions.ILogin;
 import com.bh.icommonallutil.IBaseException;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class GlobalActions implements ICommonUI, ILogin{
+public class GlobalActions implements ICommonUI, ILogin, IAlertmanagementUI {
 
     private ICommonUI commonUIAction;
     private ILogin loginActions;
+
+    private IAlertmanagementUI AlertmngmntActions;
+
+    public IAlertmanagementUI getAlertmngmntActions() {
+        return AlertmngmntActions;
+    }
+
+    public void setAlertmngmntActions(IAlertmanagementUI alertmngmntActions) {
+        this.AlertmngmntActions = alertmngmntActions;
+    }
+
 
     public ICommonUI getCommonUIActions() {
         return commonUIAction;
@@ -50,9 +63,7 @@ public class GlobalActions implements ICommonUI, ILogin{
 
     @Override
     public void userlogin() {
-
         this.loginActions.userlogin();
-
     }
 
     @Override
@@ -92,9 +103,7 @@ public class GlobalActions implements ICommonUI, ILogin{
 
     @Override
     public void verifyAssetHierarchyview() {
-
         this.commonUIAction.verifyAssetHierarchyview();
-
     }
 
     @Override
@@ -104,9 +113,7 @@ public class GlobalActions implements ICommonUI, ILogin{
 
     @Override
     public void serachInAssetHierarchyview() {
-
         this.commonUIAction.serachInAssetHierarchyview();
-
     }
 
 
@@ -117,21 +124,31 @@ public class GlobalActions implements ICommonUI, ILogin{
     @Override
     public void logout() {
         this.commonUIAction.logout();
-
     }
 
     @Override
     public void launchApplication() {
-     this.commonUIAction.launchApplication();
-
-
+        this.commonUIAction.launchApplication();
     }
 
-@Override
+    @Override
     public void validateLogin() {
+        this.loginActions.validateLogin();
+    }
 
-    this.loginActions.validateLogin();
+    @Override
+    public void navigateToAlertmngmntTab() {
+       this.AlertmngmntActions.navigateToAlertmngmntTab();
+    }
 
+    @Override
+    public void navigateTocreatealertui() {
+        this.AlertmngmntActions.navigateTocreatealertui();
+    }
+
+    @Override
+    public void createAlert() {
+        this.AlertmngmntActions.createAlert();
     }
 }
 

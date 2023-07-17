@@ -1,5 +1,5 @@
 #User Navigation to Asset Hierarchy
-@TestReports
+
 Feature: CCUS Asset Hierarchy UI Validations
 
   Background: Tenant is logged in to application
