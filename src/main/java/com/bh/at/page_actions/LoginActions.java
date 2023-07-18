@@ -30,8 +30,9 @@ public class LoginActions implements ILogin {
     public void HomePage() {
 
       LOG.info("Verifying default Homepage of Customer");
-        appPage.pause(5000);
-         appPage.getBrowser().reloadUI();
+        appPage.pause(defaultTimeout);
+//         appPage.getBrowser().reloadUI();
+//        appPage.pause(defaultTimeout);
         if( appPage.getBrowser().getTitle().equals("CCUS Product"))
         {
             if(appPage.getCurrentUrl().contains("config-app")) {

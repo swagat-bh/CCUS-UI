@@ -49,7 +49,7 @@
   },
   "cucumber": {
     "features": "classpath:Features",
-    "suites": "@TestReports",
+    "suites": "@US435778",
     "xml": "junit:cucumber-reports/Cucumber.xml",
     "json": "json:cucumber-reports/Cucumber.json",
     "html": "html:cucumber-reports/Cucumber.html",

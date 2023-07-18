@@ -1,0 +1,132 @@
+{
+  "RISK_SEARCH": {
+    "locatorType": "css",
+    "locatorValue": "div.search-child"
+  },
+  "RISK_SEARCH_ICON": {
+    "locatorType": "css",
+    "locatorValue": "div.search-child-2"
+  },
+  "RISK_DONER_MENU": {
+    "locatorType": "",
+    "locatorValue": ""
+  },
+  "RISK_HOMEPAGE": {
+    "locatorType": "xpath",
+    "locatorValue": "//span[text()='Risk Management']"
+  },
+
+  "ADD_NEW_RISK_BUTTON": {
+    "locatorType": "xpath",
+    "locatorValue": "//span[@class='add-new-risk-button-text']"
+  },
+  "CREATE_RISK_PAGE": {
+    "locatorType": "xpath",
+    "locatorValue": "//div[@class='newRiskText']"
+  },
+  "RISK_DROPDOWN_LABEL_LIST": {
+    "locatorType": "xpath",
+    "locatorValue": "//div[@class='dropdownTitle']"
+  },
+  "RISK_SERVICE_COMPANY_DROPDOWN": {
+    "locatorType": "xpath",
+    "locatorValue": "//div[@id = 'mat-select-value-5']"
+  },
+  "SELECT_SERVICE_COMPANY_IPS": {
+    "locatorType": "xpath",
+    "locatorValue": "//*[contains(text(),' IPS/etc')]"
+  },
+  "RISK_CATEGORY": {
+    "locatorType": "xpath",
+    "locatorValue": "//div[@id = 'mat-select-value-7']"
+  },
+  "RISK_CATEGORY_MECHANICAL": {
+    "locatorType": "xpath",
+    "locatorValue": "//*[contains(text(),'Mechanical')]"
+  },
+  "RISK": {
+    "locatorType": "xpath",
+    "locatorValue": "//div[@id = 'mat-select-value-9']"
+  },
+  "RISK_SIDE_WALL_COLLAPSING": {
+    "locatorType": "xpath",
+    "locatorValue": "//*[contains(text(),'Side wall collapsing')]"
+  },
+  "RISK_EFFECT": {
+    "locatorType": "xpath",
+    "locatorValue": "//div[@id = 'mat-select-value-11']"
+  },
+  "RISK_EFFECT_WALL_CLOSURE": {
+    "locatorType": "xpath",
+    "locatorValue": "//*[contains(text(),'Well closure')]"
+  },
+  "RISK_HAZARD": {
+    "locatorType": "xpath",
+    "locatorValue": "//div[@id = 'mat-select-value-13']"
+  },
+  "RISK_HAZARD_CASING_1": {
+    "locatorType": "xpath",
+    "locatorValue": "//*[contains(text(),'Casing Damange_Hazard1')]"
+  },
+  "RISK_CONTROL_AND_THEIR_RANKS": {
+    "locatorType": "xpath",
+    "locatorValue": "//div[@id = 'mat-select-value-15']"
+  },
+  "RISK_C&R_PRESSURE": {
+    "locatorType": "xpath",
+    "locatorValue": "//*[contains(text(),'Pressure < 100 psi')]"
+  },
+  "RISK_C&R_RANK": {
+    "locatorType": "xpath",
+    "locatorValue": "//*[contains(text(),'Select Rank')]"
+  },
+  "RISK_C&R_RANK_VALUE_1": {
+    "locatorType": "xpath",
+    "locatorValue": "//*[contains(text(),'Rank 1')]"
+  },
+  "RISK_SELECT_ASSERT": {
+    "locatorType": "xpath",
+    "locatorValue": "//input[@formcontrolname='asset']"
+  },
+  "RISK_SEVERITY_LABEL": {
+    "locatorType": "xpath",
+    "locatorValue": "//div[@class='riskSeverityTabsLable']"
+  },
+  "RISK_SEVERITY_LOW": {
+    "locatorType": "xpath",
+    "locatorValue": "//*[@class='mat-button-toggle mat-button-toggle-appearance-standard' and @value='Low']"
+  },
+  "RISK_SEVERITY_MEDIUM": {
+    "locatorType": "xpath",
+    "locatorValue": "//*[@class='mat-button-toggle mat-button-toggle-appearance-standard' and @value='Medium']"
+  },
+  "RISK_SEVERITY_HIGH": {
+    "locatorType": "xpath",
+    "locatorValue": "//*[@class='mat-button-toggle mat-button-toggle-appearance-standard' and @value='High']"
+  },
+  "RISK_COMMENTS": {
+    "locatorType": "xpath",
+    "locatorValue": "//*[@id='riskComments']/textarea"
+  },
+  "CANCEL_RISK_BUTTON": {
+    "locatorType": "xpath",
+    "locatorValue": "//span[text() = 'Cancel']"
+  },
+  "REQUIRED_FIELD_ERROR_MESSAGE": {
+    "locatorType": "xpath",
+    "locatorValue": "//*[@class='cdk-global-overlay-wrapper']"
+  },
+  "CREATE_RISK_BUTTON": {
+    "locatorType": "css",
+    "locatorValue": "bh-button:nth-child(2)"
+  },
+  "CREATE_RISK_BUTTON_CONFIRM": {
+    "locatorType": "xpath",
+    "locatorValue": "//*[@id='sb--modal']//*[@type='primary']"
+  },
+  "IFRAME_WRAPPER": {
+    "locatorType": "id",
+    "locatorValue": "iframeWrapper"
+  }
+
+}

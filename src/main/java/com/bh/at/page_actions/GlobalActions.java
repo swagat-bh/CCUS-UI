@@ -7,10 +7,23 @@ import com.bh.icommonallutil.IBaseException;
 import java.util.HashMap;
 import java.util.Map;
 
-public class GlobalActions implements ICommonUI, ILogin{
+public class GlobalActions implements ICommonUI, ILogin, IRiskRegister{
 
     private ICommonUI commonUIAction;
     private ILogin loginActions;
+
+
+
+    private IRiskRegister riskRegister;
+
+    public IRiskRegister getRiskRegister() {
+        return riskRegister;
+    }
+
+    public void setRiskRegister(IRiskRegister riskRegister) {
+        this.riskRegister = riskRegister;
+    }
+
 
     public ICommonUI getCommonUIActions() {
         return commonUIAction;
@@ -131,6 +144,75 @@ public class GlobalActions implements ICommonUI, ILogin{
     public void validateLogin() {
 
     this.loginActions.validateLogin();
+
+    }
+
+    @Override
+    public void verifyAddNewRiskButton() {
+        this.riskRegister.verifyAddNewRiskButton();
+
+    }
+
+    @Override
+    public void clickOnAddNewRiskButtonN() {
+        this.riskRegister.clickOnAddNewRiskButtonN();
+
+    }
+
+    @Override
+    public void verifyCreateRiskPageAndRiskDetailsDropdownTitles() {
+        this.riskRegister.verifyCreateRiskPageAndRiskDetailsDropdownTitles();
+
+    }
+
+    @Override
+    public void selectRiskDetailsDropDownValues() {
+        this.riskRegister.selectRiskDetailsDropDownValues();
+
+    }
+
+    @Override
+    public void selectRiskSeverity() {
+        this.riskRegister.selectRiskSeverity();
+
+    }
+
+    @Override
+    public void verifyAndSelectMitigationDetails() {
+
+    }
+
+    @Override
+    public void verifyAndSelectRecoveryInformation() {
+
+    }
+
+    @Override
+    public void addCommentsForRisk() {
+        this.riskRegister.addCommentsForRisk();
+
+    }
+
+    @Override
+    public void validateCancelButton() {
+        this.riskRegister.validateCancelButton();
+
+    }
+
+    @Override
+    public void verifyAndSelectCreateRiskButton() {
+        this.riskRegister.verifyAndSelectCreateRiskButton();
+
+    }
+
+    @Override
+    public void selectCreateRiskButtonWithoutRequiredFields() {
+        this.riskRegister.selectCreateRiskButtonWithoutRequiredFields();
+    }
+
+    @Override
+    public void verifyRequiredFieldMessage() {
+        this.riskRegister.verifyRequiredFieldMessage();
 
     }
 }
