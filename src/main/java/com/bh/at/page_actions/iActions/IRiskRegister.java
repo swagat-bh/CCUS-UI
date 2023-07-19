@@ -27,5 +27,9 @@ public interface IRiskRegister {
 
     public void verifyRequiredFieldMessage();
 
+    public void verifyAndSelectTheMeatballMenu();
 
+    public void verifyDeleteAndUpdateOptionUnderMeatBallMenu();
+
+    void selectDeleteOption(String Option, String noOfItems);
 }

@@ -215,6 +215,24 @@ public class GlobalActions implements ICommonUI, ILogin, IRiskRegister{
         this.riskRegister.verifyRequiredFieldMessage();
 
     }
+
+    @Override
+    public void verifyAndSelectTheMeatballMenu() {
+        this.riskRegister.verifyAndSelectTheMeatballMenu();
+
+    }
+
+    @Override
+    public void verifyDeleteAndUpdateOptionUnderMeatBallMenu() {
+        this.riskRegister.verifyDeleteAndUpdateOptionUnderMeatBallMenu();
+
+    }
+
+    @Override
+    public void selectDeleteOption(String Option, String noOfItems) {
+        this.riskRegister.selectDeleteOption(Option,noOfItems);
+
+    }
 }
 
 

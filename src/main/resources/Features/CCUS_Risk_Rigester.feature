@@ -23,3 +23,16 @@ Feature: E2E Risk management validate, Add, update and Delete new Risk under Ris
         And User is not able to add Risk Details without required fields
         Then validate that error message appears to fill all required fields
 
+    @Risk_Management_Delete_Existing_Risk
+    Scenario Outline: Login to CCUS Application select the existing risk and delete the Risk
+        Given Verify that user is landed on Risk management page after login
+        When User is able to click on meatball menu next to risk define
+        Then Verify that the new menu with update and delete option pops up
+        And User is able to select the "<OPTIONS>" option to delete "<NO_OF_RISKS>" risks
+
+        Examples:
+          |TC_ID| NO_OF_RISKS | OPTIONS |
+          |1    | 10           | Delete  |
+
+
+

@@ -127,6 +127,29 @@
   "IFRAME_WRAPPER": {
     "locatorType": "id",
     "locatorValue": "iframeWrapper"
+  },
+  "RISK_MEATBALL_MENU": {
+    "locatorType": "xpath",
+    "locatorValue": "//*[@class='mat-mdc-menu-trigger']"
+  },
+  "TOTAL_NUMBER_OF_RISKS": {
+    "locatorType": "xpath",
+    "locatorValue": "//*[@class='mat-mdc-paginator-range-label']"
+  },
+  "CLICK_UPDATE_RISK": {
+    "locatorType": "xpath",
+    "locatorValue": "//*[@class='menu-text' and contains(text(), 'Update')]"
+  },
+  "CLICK_DELETE_RISK": {
+    "locatorType": "xpath",
+    "locatorValue": "//*[@class='menu-text' and contains(text(), 'Delete')]"
+  },
+  "CONFIRM_RISK_DELETION_TEXT": {
+    "locatorType": "xpath",
+    "locatorValue": "//*[contains(text(), 'Confirm Risk Deletion')]"
+  },
+  "RISK_DELETION_BUTTON": {
+    "locatorType": "xpath",
+    "locatorValue": "//*[contains(text(), 'Yes, Delete Risk')]"
   }
-
 }

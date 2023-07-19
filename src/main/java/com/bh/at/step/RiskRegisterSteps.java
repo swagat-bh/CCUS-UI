@@ -73,4 +73,25 @@ public class RiskRegisterSteps {
     public void validateThatErrorMessageAppearsToFillAllRequiredFields() {
         actions.verifyRequiredFieldMessage();
     }
+
+    @Given("Verify that user is landed on Risk management page after login")
+    public void verifyThatUserIsLandedOnRiskManagementPageAfterLogin() {
+        actions.verifyAddNewRiskButton();
+    }
+
+    @When("User is able to click on meatball menu next to risk define")
+    public void userIsAbleToClickOnMeatballMenuNextToRiskDefine() {
+        actions.verifyAndSelectTheMeatballMenu();
+    }
+
+    @Then("Verify that the new menu with update and delete option pops up")
+    public void verifyThatTheNewMenuWithUpdateAndDeleteOptionPopsUp() {
+        actions.verifyDeleteAndUpdateOptionUnderMeatBallMenu();
+
+    }
+
+    @And("User is able to select the {string} option to delete {string} risks")
+    public void userIsAbleToSelectTheOptionToDelete(String MenuOption, String NoOfItems) {
+        actions.selectDeleteOption(MenuOption, NoOfItems);
+    }
 }

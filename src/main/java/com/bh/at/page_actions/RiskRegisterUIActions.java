@@ -3,15 +3,10 @@ package com.bh.at.page_actions;
 import com.bh.at.iuiutil.IElement;
 import com.bh.at.iuiutil.IFrame;
 import com.bh.at.page_actions.iActions.IRiskRegister;
-import com.bh.at.uiutil.CyBrowserPage;
 import com.bh.at.uiutil.CyElements;
-import com.ctc.wstx.shaded.msv_core.datatype.xsd.BuiltinAtomicType;
-import io.cucumber.java.an.E;
 import org.junit.Assert;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import javax.xml.xpath.XPath;
 
 import static com.bh.at.main.AppConfig.getEnvParam;
 import static com.bh.at.core.DriverManager.ElementType.*;
@@ -43,8 +38,7 @@ public class RiskRegisterUIActions implements IRiskRegister {
             if(!uiAction.getElement(DIV,RISKREGISTERPAGE,"RISK_HOMEPAGE").isDisplayed())
 
             uiAction.getElement(DIV,RISKREGISTERPAGE,"ADD_NEW_RISK_BUTTON").isDisplayed();
-//            uiAction.getElement(BUTTON,RISKREGISTERPAGE,"ADD_NEW_RISK_BUTTON").click();
-//            appPage.pause(2000);
+
         }catch (Exception e){
             LOG.info("-------Risk Management view is not available or integrated to the application------------ ");
             Assert.fail("Risk Management UI is not available");
@@ -235,4 +229,79 @@ public class RiskRegisterUIActions implements IRiskRegister {
         }
 
     }
+
+    //This is the methods related to Deletion of risks
+    @Override
+    public void verifyAndSelectTheMeatballMenu() {
+        LOG.info("verifying the meatball menu for the deletion and inundation of the risk");
+        appPage.pause(1000);
+
+        try {
+
+            uiAction.getElement(DIV, RISKREGISTERPAGE, "RISK_MEATBALL_MENU").isDisplayed();
+            uiAction.getElement(DIV, RISKREGISTERPAGE, "RISK_MEATBALL_MENU").jsClick();
+
+        }catch (Exception e){
+            Assert.fail(e.getMessage());
+        }
+
+    }
+
+    @Override
+    public void verifyDeleteAndUpdateOptionUnderMeatBallMenu() {
+        LOG.info("Once the user click on meatball menu verify the update and delete option is available");
+        appPage.pause(1000);
+
+        try {
+            uiAction.getElement(DIV, RISKREGISTERPAGE, "CLICK_UPDATE_RISK").isDisplayed();
+            uiAction.getElement(DIV, RISKREGISTERPAGE, "CLICK_DELETE_RISK").isDisplayed();
+
+        }catch (Exception e){
+            Assert.fail(e.getMessage());
+        }
+
+    }
+
+    @Override
+    public void selectDeleteOption(String Option, String noOfItems) {
+        LOG.info("selecting the delete option and delete one or all risk defined");
+        appPage.pause(1000);
+
+        try {
+            String riskCount = uiAction.getElement(DIV,RISKREGISTERPAGE, "TOTAL_NUMBER_OF_RISKS").getText();
+            String[] totalRisk =  riskCount.split("of",2);
+
+            if(Option.equalsIgnoreCase("delete")){
+
+                if(noOfItems.equalsIgnoreCase("ALL")){
+
+                    int totalRiskCount = Integer.parseInt(totalRisk[1].replaceAll("\\s", ""));
+                    while(totalRiskCount>0){
+                        uiAction.getElement(DIV, RISKREGISTERPAGE, "CLICK_DELETE_RISK").jsClick();
+                        uiAction.getElement(DIV, RISKREGISTERPAGE, "CONFIRM_RISK_DELETION_TEXT").isDisplayed();
+                        uiAction.getElement(BUTTON, RISKREGISTERPAGE, "RISK_DELETION_BUTTON").jsClick();
+                        totalRiskCount--;
+                        appPage.pause(1000);
+                        uiAction.getElement(DIV, RISKREGISTERPAGE, "RISK_MEATBALL_MENU").jsClick();
+                    }
+                }else {
+                    int totalRiskCount = Integer.parseInt(noOfItems);
+                    while (totalRiskCount>0){
+                        uiAction.getElement(DIV, RISKREGISTERPAGE, "CLICK_DELETE_RISK").jsClick();
+                        uiAction.getElement(DIV, RISKREGISTERPAGE, "CONFIRM_RISK_DELETION_TEXT").isDisplayed();
+                        uiAction.getElement(BUTTON, RISKREGISTERPAGE, "RISK_DELETION_BUTTON").jsClick();
+                        totalRiskCount--;
+                        appPage.pause(1000);
+                        uiAction.getElement(DIV, RISKREGISTERPAGE, "RISK_MEATBALL_MENU").jsClick();
+                    }
+                }
+            }
+
+
+        }catch (Exception e){
+            Assert.fail(e.getMessage());
+        }
+
+    }
+
 }
