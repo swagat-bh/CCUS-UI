@@ -20,15 +20,12 @@ import static com.bh.at.page_actions.CommonUIAction.appPage;
 import static com.bh.at.tester.BaseTester.*;
 
 public class CukeHooks {
-
     private static final Logger LOG = LoggerFactory.getLogger(CukeHooks.class);
     private static int pixCount = 0;
-
     @Before
     public void beforeScenario(Scenario scenario) {
         System.out.println("beforeScenario " + scenario.getName());
     }
-
     @After
     public void afterScenario(Scenario scenario) {
         LOG.info("Running After Scenario");

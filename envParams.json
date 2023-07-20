@@ -49,9 +49,9 @@
   },
   "cucumber": {
     "features": "classpath:Features",
-    "suites": "@TestReports",
+    "suites": "@CCUS_APP_UI_TEST and @Test",
     "xml": "junit:cucumber-reports/Cucumber.xml",
-    "json": "json:cucumber-reports/Cucumber.json",
+    "json": "json:cucumber-reports/Cucumber.json",sn
     "html": "html:cucumber-reports/Cucumber.html",
     "steps": "com.bh.at.step"
   },

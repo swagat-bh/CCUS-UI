@@ -23,9 +23,7 @@ import java.util.Objects;
 import static com.bh.at.tester.BaseTester.actions;
 
 public class CommonUISteps {
-
   private static Scenario scenario;
-
   static {
     if (Objects.isNull(actions.getCommonUIActions())) {
       actions.setCommonUIActions(new CommonUIAction());
@@ -36,39 +34,30 @@ public class CommonUISteps {
   public void beforeStep(Scenario lScenario) {
     scenario = lScenario;
   }
-
   @Given("User launches the application")
   public void userLaunchesTheApplication() {
     actions.launchBrowser();
   }
-
   @Then("User closes the application")
   public void userClosesTheApplication() {
     actions.quitBrowser();
-
   }
   @Given("Validate step {string}")
   public void validate_step(String str) {
     Assert.assertEquals("true",str);
   }
-
   @Given("User launches the Augury application")
   public void userLaunchesTheAuguryApplication() {
     actions.auguryLaunchApplication();
   }
-
-
-
   @When("User perform {string} asset mapping from different source systems")
   public void userPerformAssetMappingFromDifferentSourceSystems(String project) throws IBaseException {
     actions.performAssetMappingFromDifferentSourceSystems(project);
   }
-
   @Then("User perform asset unmapping of {string} from different source systems")
   public void userPerformAssetUnmappingOfFromDifferentSourceSystems(String project) throws IBaseException {
     actions.AssetUnmappingFromDifferentSourceSystems(project);
   }
-
   @Given("Prepare list of enterprise ids to delete from file {string}")
   public void prepareListOfEnterpriseIdsToDelete(String CSV_FILE_PATH) throws CyBaseException, IOException, ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException {
     CsvUtil obj = new CsvUtil();

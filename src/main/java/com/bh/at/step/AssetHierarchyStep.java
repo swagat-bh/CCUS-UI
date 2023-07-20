@@ -12,9 +12,7 @@ import java.util.Objects;
 
 import static com.bh.at.tester.BaseTester.actions;
 public class AssetHierarchyStep {
-
     private static Scenario scenario;
-
     @Before
     public void beforeStep(Scenario lScenario) {
         scenario = lScenario;
@@ -25,28 +23,18 @@ public class AssetHierarchyStep {
             actions.setCommonUIActions(new CommonUIAction());
         }
     }
-
   @Given("Asset Hierarchy View available in CCUS App")
     public void validateAssetHierarchyview()
     {
-
         actions.verifyAssetHierarchyview();
-
     }
-
-
     @When("User navigates to Asset hierarchy view using Navigation drawer")
     public void userNavigatesToAssetHierarchyViewUsingNavigationDrawer() {
-
           actions.navigateToAssetHierarchyview();
     }
 
     @Then("user should be able to search the asset entities")
     public void userShouldBeAbleToSearchTheAssetEntities() {
-
-
         actions.serachInAssetHierarchyview();
-
-
     }
 }

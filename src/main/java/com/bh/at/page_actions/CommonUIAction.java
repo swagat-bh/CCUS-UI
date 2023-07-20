@@ -22,57 +22,39 @@ import static com.bh.at.tester.BaseTester.uiAction;
 
 
 public class CommonUIAction implements ICommonUI {
-
     public static CyBrowserPage appPage = null;
     public static final int defaultTimeout = 5000;
-
     private final String PAGE = "newLogin";
     private final String ASSETPAGE="assetHierarchy";
     private static final Logger LOG = LoggerFactory.getLogger(CommonUIAction.class);
-
     private final String url = getEnvParam("data_UI/url", null);
-
     private CyElements<IElement> Parentnodes;
-
-
-
-
     @Override
     public void launchApplication() {
-
         appPage = uiAction = new DriverManager();
         appPage.launch(url);
         LOG.info("Browser launched successfully.");
-
-
     }
 
 
     @Override
     public void launchBrowser() {
-
-
-
     }
 
     @Override
     public void quitBrowser() {
-
     }
 
     @Override
     public void clickStatusActionBarItem() {
-
     }
 
     @Override
     public void clickSummaryTab() {
-
     }
 
     @Override
     public void search() {
-
     }
 
     @Override
@@ -84,24 +66,20 @@ public class CommonUIAction implements ICommonUI {
         uiAction.getElement(INPUT, PAGE, "LOGOUT").waitForElementTobeDisplayed();
         uiAction.getElement(INPUT, PAGE, "LOGOUT").jsClick();
         uiAction.getElement(BUTTON, PAGE, "CONFIRM_LOGOUT").jsClick();
-
     }
 
 
 
     @Override
     public void auguryLaunchApplication() {
-
     }
 
     @Override
     public void performAssetMappingFromDifferentSourceSystems(String project) throws IBaseException {
-
     }
 
     @Override
     public void AssetUnmappingFromDifferentSourceSystems(String project) throws IBaseException {
-
     }
 
     @Override
@@ -140,7 +118,6 @@ public class CommonUIAction implements ICommonUI {
 
             if(loops==(uiAction.getElements(BUTTON, ASSETPAGE, "ASSET_EXPAND_ICON").size()))
             break;
-
         }
 
         Parentnodes=uiAction.getElements(BUTTON, ASSETPAGE, "ASSET_EXPANDED_NODE");

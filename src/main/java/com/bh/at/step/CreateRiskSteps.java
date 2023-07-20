@@ -13,60 +13,41 @@
 
 package com.bh.at.step;
 
-import com.bh.at.tester.CreateRISKTester;
+import com.bh.at.tester.CreateRiskTester;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class CreateRISKSteps {
-  private static final CreateRISKTester createRISKTester = new CreateRISKTester();
-
+public class CreateRiskSteps {
+  private static final CreateRiskTester createRISKTester = new CreateRiskTester();
   private static Scenario scenario;
-
-  public CreateRISKSteps() {
-    CreateRISKTester.testRunnerLogger = CreateRISKSteps::cukeLogger;
+  public CreateRiskSteps() {
+    CreateRiskTester.testRunnerLogger = CreateRiskSteps::cukeLogger;
   }
-
-  /**
-   * This function is called before the steps are executed,
-   * the current scenarios is passed in as a parameter.
-   *
-   * @param lScenario The current scenario being run.
-   */
   @Before
   public void beforeStep(Scenario lScenario) {
     scenario = lScenario;
   }
-
   @Given("the api file {string}")
   public void initCreateRISKApi(String apiFile) {
     apiFile = apiFile.split(":")[0] + ".api";
     createRISKTester.initCreateRISKApi(apiFile);
   }
-
   @When("the user calls {string}")
   public void callDeleteCreateRISKApi(String apiCall) {
     apiCall = apiCall.substring(0, apiCall.lastIndexOf(":"));
     createRISKTester.callDeleteCreateRISKApi(apiCall);
   }
-
   @Then("user should get success response with status code {int}")
   public void createRISK_f1(Integer p0) {
     createRISKTester.createRISK_f1(p0);
   }
-
   @Then("user should get bad request response with status code {int}")
   public void createRISK_f2(Integer p0) {
     createRISKTester.createRISK_f2(p0);
   }
-
-  /**
-   * Add log messages to the cucumber report and the console.
-   *
-   * @param msg The message to be logged.
-   */
   private static void cukeLogger(String msg) {
     System.out.println(msg);
     scenario.log(msg);

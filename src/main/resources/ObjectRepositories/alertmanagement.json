@@ -43,6 +43,22 @@
     "locatorType": "xpath",
     "locatorValue": "//input[@formcontrolname='duration']"
   },
+  "ALERT_SEARCH_UI": {
+  "locatorType": "css",
+  "locatorValue": ".searchfield"
+  },
+  "ALERT_SEARCH_RESULT": {
+    "locatorType": "xpath",
+    "locatorValue": "//tbody[@class='mdc-data-table__content']//tr"
+  },
+  "ALERT_DELETE_OPTIONS": {
+    "locatorType": "css",
+    "locatorValue": ".mat-mdc-menu-trigger"
+  },
+  "ALERT_DELETE_BUTTON": {
+    "locatorType": "xpath",
+    "locatorValue": "//span[text()='Delete Alert Rule']"
+  },
   "IFRAME_WRAPPER": {
     "locatorType": "id",
     "locatorValue": "iframeWrapper"
