@@ -14,18 +14,13 @@ import static com.bh.at.tester.BaseTester.*;
 
 
 public class LoginActions implements ILogin {
-
-
     private static final Logger LOG = LoggerFactory.getLogger(LoginActions.class);
     private final String PAGE = "newLogin";
     private final String UN = getEnvParam("data_UI/username", null);
     private final String PASS =getEnvParam("data_UI/password","");
-
     @Override
     public void adminLogin() {
-
     }
-
     @Override
     public void HomePage() {
 
@@ -36,14 +31,12 @@ public class LoginActions implements ILogin {
         {
             if(appPage.getCurrentUrl().contains("config-app")) {
                 try {
-
                     ((IFrame) uiAction.getElement(FRAME, PAGE, "IFRAME_WRAPPER")).setAsCurrent();
-
                     while(!uiAction.getElement(DIV, PAGE, "DEFAULT_HOMEPAGE").isDisplayed())
                     {
                         appPage.getBrowser().reloadUI();
+                        appPage.pause(3000);
                     }
-
                     LOG.info("User landed on Homepage succesfully");
                 } catch (Exception e) {
                     LOG.info("User is not landed on Homepage as expected ");
@@ -84,7 +77,6 @@ public class LoginActions implements ILogin {
             uiAction.getElement(BUTTON, PAGE, "NEXT_BUTTON").click();
             uiAction.getElement(TEXT,PAGE,"INVALID_LOGIN_ERROR").waitForElementTobeDisplayed();
             System.out.println(uiAction.getElement(TEXT,PAGE,"INVALID_LOGIN_ERROR").getText());
-
         }
 
 
@@ -97,15 +89,12 @@ public class LoginActions implements ILogin {
             uiAction.getElement(BUTTON, PAGE, "NEXT_BUTTON").click();
             if(uiAction.getElements(BUTTON, PAGE, "CONFIRM_COOKIE").get(0).waitForElementTobeDisplayed())
             {
-
-
                 uiAction.getElements(BUTTON, PAGE, "CONFIRM_COOKIE").get(0).jsClick();
             }
 
         }
     }
     private void search(){
-
         uiAction.getElement(INPUT,PAGE,"GOOGLEINPUT").sendKeys("Test google ");
     }
 

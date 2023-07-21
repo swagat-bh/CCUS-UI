@@ -15,29 +15,25 @@ package com.bh.at.tester;
 
 import static com.bh.at.apiutil.CyAPIUtilFactory.apif;
 import static com.bh.at.main.AppConfig.*;
-import static com.bh.at.main.Runner.*;
 
 import com.bh.at.iapiutil.IAPIHelper;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+
+import java.util.*;
 import java.util.function.Consumer;
+
+import io.cucumber.java.Scenario;
+import org.joda.time.DateTime;
 import org.junit.Assert;
 
-public final class CreateRISKTester {
+public final class CreateRiskTester {
   public static Consumer<String> testRunnerLogger;
-
   private IAPIHelper createRISKApiHelper;
-
   private final Map<String, Object> metaInfo = new HashMap<>();
-
   private final Map<String, IAPIHelper> apiHelpers = new HashMap<>();
-
   private String lastApiFileUsed;
-
-  public CreateRISKTester() {
+  private static  int RISK_ID; ;
+  public CreateRiskTester() {
   }
-
   /**
    * the api file CCUS.CreateRISK:apiJSON.
    *
@@ -47,7 +43,6 @@ public final class CreateRISKTester {
     createRISKApiHelper = getApiHelper(apiPaths, apiFile);
     log2TestRunner("\n>>>>> createRISK : Function initCreateRISKApi (the api file CCUS.CreateRISK:apiJSON) not fully implemented.");
   }
-
   /**
    * the user calls delete:CreateRISK:apiCALL.
    *
@@ -56,21 +51,26 @@ public final class CreateRISKTester {
   public void callDeleteCreateRISKApi(String apiCall) {
     metaInfo.clear();
     metaInfo.put("cyborg:reqName", apiCall);
+    metaInfo.put("{{current_timestamp}}",DateTime.now());
+    metaInfo.put("{{RISK_ID}}",RISK_ID);
     System.out.println(createRISKApiHelper.getApiJsono(metaInfo));
     Assert.assertTrue(apiCall + " from file " + lastApiFileUsed + " failed.", createRISKApiHelper.callAPI(metaInfo));
     log2TestRunner("\n>>>>> createRISK : Function callDeleteCreateRISKApi (the user calls delete:CreateRISK:apiCALL) not fully implemented.");
   }
-
   /**
    * user should get success response with status code 204.
    *
    * @param p0
    */
   public void createRISK_f1(Integer p0) {
-    log2TestRunner("\n>>>>> createRISK : Function createRISK_f1 (user should get success response with status code 204) not fully implemented.");
     System.out.println(createRISKApiHelper.getActRespBody());
-    Assert.assertEquals("",createRISKApiHelper.getActRespCode() );
-  }
+    if(createRISKApiHelper.getActRespBody().getJSONO("jsonObj").isEmpty())
+    {  Assert.assertEquals("204",createRISKApiHelper.getActRespCode() );}
+    else {
+      RISK_ID = createRISKApiHelper.getActRespBody().getJSONO("jsonObj").get("risk_register_id");
+      Assert.assertEquals("201", createRISKApiHelper.getActRespCode());}
+    }
+
 
   /**
    * user should get bad request response with status code 400.
@@ -78,7 +78,9 @@ public final class CreateRISKTester {
    * @param p0
    */
   public void createRISK_f2(Integer p0) {
-    log2TestRunner("\n>>>>> createRISK : Function createRISK_f2 (user should get bad request response with status code 400) not fully implemented.");
+    System.out.println(createRISKApiHelper.getActRespBody());
+    Assert.assertEquals("400",createRISKApiHelper.getActRespCode() );
+
   }
 
   /**
