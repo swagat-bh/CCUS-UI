@@ -31,7 +31,7 @@ public final class CreateRiskTester {
   private final Map<String, Object> metaInfo = new HashMap<>();
   private final Map<String, IAPIHelper> apiHelpers = new HashMap<>();
   private String lastApiFileUsed;
-  private static  Integer RISK_ID=0 ;
+  private static  int RISK_ID; ;
   public CreateRiskTester() {
   }
   /**
