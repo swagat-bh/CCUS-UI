@@ -29,7 +29,7 @@ public class CukeHooks {
     @After
     public void afterScenario(Scenario scenario) {
         LOG.info("Running After Scenario");
-        /*try {
+        try {
             if (scenario.isFailed() && appPage != null) {
                 IJSONA logs = appPage.getBrowser().getDevTools().getLatestBrowserLogs(100);
                 LOG.error(" ***ERROR CONSOLE***", logs);
@@ -43,7 +43,7 @@ public class CukeHooks {
 
 
             }
-            if(!currentTenant.equals(defaultTenant)) {
+            /*if(!currentTenant.equals(defaultTenant)) {
                 currentTenant = defaultTenant;
                 actions.getCommonAPIActions().clearTokenHeaders();
             }*/

@@ -17,10 +17,12 @@ import static com.bh.at.apiutil.CyAPIUtilFactory.apif;
 import static com.bh.at.main.AppConfig.*;
 
 import com.bh.at.iapiutil.IAPIHelper;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+
+import java.util.*;
 import java.util.function.Consumer;
+
+import io.cucumber.java.Scenario;
+import org.joda.time.DateTime;
 import org.junit.Assert;
 
 public final class CreateRiskTester {
@@ -29,6 +31,7 @@ public final class CreateRiskTester {
   private final Map<String, Object> metaInfo = new HashMap<>();
   private final Map<String, IAPIHelper> apiHelpers = new HashMap<>();
   private String lastApiFileUsed;
+  private static  Integer RISK_ID=0 ;
   public CreateRiskTester() {
   }
   /**
@@ -48,6 +51,8 @@ public final class CreateRiskTester {
   public void callDeleteCreateRISKApi(String apiCall) {
     metaInfo.clear();
     metaInfo.put("cyborg:reqName", apiCall);
+    metaInfo.put("{{current_timestamp}}",DateTime.now());
+    metaInfo.put("{{RISK_ID}}",RISK_ID);
     System.out.println(createRISKApiHelper.getApiJsono(metaInfo));
     Assert.assertTrue(apiCall + " from file " + lastApiFileUsed + " failed.", createRISKApiHelper.callAPI(metaInfo));
     log2TestRunner("\n>>>>> createRISK : Function callDeleteCreateRISKApi (the user calls delete:CreateRISK:apiCALL) not fully implemented.");
@@ -58,17 +63,24 @@ public final class CreateRiskTester {
    * @param p0
    */
   public void createRISK_f1(Integer p0) {
-    log2TestRunner("\n>>>>> createRISK : Function createRISK_f1 (user should get success response with status code 204) not fully implemented.");
     System.out.println(createRISKApiHelper.getActRespBody());
-    Assert.assertEquals("400",createRISKApiHelper.getActRespCode() );
-  }
+    if(createRISKApiHelper.getActRespBody().getJSONO("jsonObj").isEmpty())
+    {  Assert.assertEquals("204",createRISKApiHelper.getActRespCode() );}
+    else {
+      RISK_ID = createRISKApiHelper.getActRespBody().getJSONO("jsonObj").get("risk_register_id");
+      Assert.assertEquals("201", createRISKApiHelper.getActRespCode());}
+    }
+
+
   /**
    * user should get bad request response with status code 400.
    *
    * @param p0
    */
   public void createRISK_f2(Integer p0) {
-    log2TestRunner("\n>>>>> createRISK : Function createRISK_f2 (user should get bad request response with status code 400) not fully implemented.");
+    System.out.println(createRISKApiHelper.getActRespBody());
+    Assert.assertEquals("400",createRISKApiHelper.getActRespCode() );
+
   }
 
   /**

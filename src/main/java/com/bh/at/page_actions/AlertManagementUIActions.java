@@ -86,6 +86,13 @@ public class AlertManagementUIActions implements IAlertmanagementUI {
             appPage.pause(1000);
             if (uiAction.getElement(BUTTON, PAGE, "ALERT_DELETE_BUTTON").isDisplayed()) {
                 uiAction.getElement(BUTTON, PAGE, "ALERT_DELETE_BUTTON").jsClick();
+                appPage.pause(2000);
+                if(uiAction.getElement(DIV,PAGE,"CONFIRM_ALERT_DELETION").isDisplayed())
+                { uiAction.getElement(DIV,PAGE,"CONFIRM_ALERT_DELETE_BUTTON").jsClick();
+                }
+                else{
+                    Assert.fail("Alert Delete Confirmation Pop Up is missing ");
+                }
                 uiAction.getBrowser().switchToMainWindow();
             }
         } catch (Exception e) {

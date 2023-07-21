@@ -1,7 +1,7 @@
 {
   "version": 2,
   "url": "https://ccus.np-0000183.npause1.bakerhughes.com/",
-  "endPoint": "risk-mgmt-svc/api/v1/risk/register/11",
+  "endPoint": "risk-mgmt-svc/api/v1/risk/register/{{RISK_ID}}",
   "metaInfo": {},
   "apiData": {
     "delete:CreateRISK": {
@@ -9,7 +9,7 @@
       "request": {
         "headers": {
           "Content-Type": [ "application/json" ],
-		  "tenant" : [ "e7766bb6-5eb0-417c-9c4d-9225404aabdb" ]
+		  "tenant" : [ "dd40b4dc-44a8-4c24-994a-ab80edc00005" ]
         },
        
         "body": {}
@@ -18,7 +18,7 @@
         "headers": {},
         "body": {},
        
-        "statusCode": "400"
+        "statusCode": "204"
       }
     }
   }

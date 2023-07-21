@@ -59,6 +59,14 @@
     "locatorType": "xpath",
     "locatorValue": "//span[text()='Delete Alert Rule']"
   },
+  "CONFIRM_ALERT_DELETION": {
+    "locatorType": "xpath",
+    "locatorValue": "//h3[text()='Confirm Alert Rule Deletion']"
+  },
+  "CONFIRM_ALERT_DELETE_BUTTON": {
+    "locatorType": "css",
+    "locatorValue": ".bh-button.motion--normal.bh-button--type-primary.bh-button--small"
+  },
   "IFRAME_WRAPPER": {
     "locatorType": "id",
     "locatorValue": "iframeWrapper"

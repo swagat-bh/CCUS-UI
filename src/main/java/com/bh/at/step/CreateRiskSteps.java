@@ -48,6 +48,7 @@ public class CreateRiskSteps {
   public void createRISK_f2(Integer p0) {
     createRISKTester.createRISK_f2(p0);
   }
+
   private static void cukeLogger(String msg) {
     System.out.println(msg);
     scenario.log(msg);

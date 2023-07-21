@@ -1,0 +1,62 @@
+{
+
+  "version": 2,
+  "url": "https://ccus.np-0000183.npause1.bakerhughes.com/",
+  "endPoint": "risk-mgmt-svc/api/v1/risk/register",
+  "metaInfo": {},
+  "apiData": {
+    "post:CreateRISK": {
+      "request": {
+        "headers": {
+          "Content-Type": [ "application/json" ],
+          "tenant" :""
+        },
+        "body": {
+          "risk_catalog_id": 1,
+          "risk_severity": "H",
+          "risk_status": "O",
+          "risk_effect": [{"risk_effect_id": 2}],
+          "risk_category": [{"risk_category_id": 1}],
+          "hazard": [{"hazard_id": 3}],
+          "control": [{"control_id": 4, "rank": 1}],
+          "asset": ["1", "2"],
+          "mitigation": [
+            {
+              "mitigation_id": 1,
+              "pre_mitigation_score": 1,
+              "post_mitigation_score": 2,
+              "active": "Y",
+              "selected_on": "{{current_timestamp}}",
+              "applied_on": "{{current_timestamp}}",
+              "applied_by": "Test Automation"
+            }
+          ],
+          "recovery": [
+            {
+              "recovery_id": 1,
+              "measures": "S",
+              "active": "Y",
+              "selected_on": "{{current_timestamp}}",
+              "applied_on": "{{current_timestamp}}",
+              "applied_by": "Test Automation"
+            }
+          ],
+          "comment": {
+            "op": "ADD",
+            "path": "/comment",
+            "value": "Comment added: This is sample text"
+          }
+        }
+    },
+      "response": {
+        "headers": {},
+        "body": {},
+       
+        "statusCode": "400"
+      }
+    }
+  }
+}
+
+
+
