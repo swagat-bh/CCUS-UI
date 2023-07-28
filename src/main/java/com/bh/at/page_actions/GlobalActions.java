@@ -3,16 +3,27 @@ package com.bh.at.page_actions;
 
 import com.bh.at.page_actions.iActions.IAlertmanagementUI;
 import com.bh.at.page_actions.iActions.ICommonUI;
+import com.bh.at.page_actions.iActions.IDashboardUi;
 import com.bh.at.page_actions.iActions.ILogin;
 import com.bh.icommonallutil.IBaseException;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class GlobalActions implements ICommonUI, ILogin, IAlertmanagementUI {
+public class GlobalActions implements ICommonUI, ILogin, IAlertmanagementUI, IDashboardUi {
     private ICommonUI commonUIAction;
     private ILogin loginActions;
+
+    private IDashboardUi dashboardActions;
     private IAlertmanagementUI AlertmngmntActions;
+
+    public IDashboardUi getDashboardActions() {
+        return dashboardActions;
+    }
+    public void setDashboardActions(IDashboardUi dashboardActions) {
+        this.dashboardActions = dashboardActions;
+    }
+
     public IAlertmanagementUI getAlertmngmntActions() {
         return AlertmngmntActions;
     }
@@ -132,6 +143,23 @@ public class GlobalActions implements ICommonUI, ILogin, IAlertmanagementUI {
     public void clickOnAddalertButton() {
 
         this.AlertmngmntActions.clickOnAddalertButton();
+    }
+
+    @Override
+    public void DashboardInsights() {
+    this.dashboardActions.DashboardInsights();
+
+    }
+
+    @Override
+    public void AssetInsights() {
+        this.dashboardActions.AssetInsights();
+
+    }
+
+    @Override
+    public void navigateToAssetInsights() {
+        this.dashboardActions.DashboardInsights();
     }
 }
 

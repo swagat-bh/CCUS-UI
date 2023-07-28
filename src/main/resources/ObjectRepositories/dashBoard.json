@@ -1,0 +1,14 @@
+{
+  "IFRAME_WRAPPER": {
+  "locatorType": "id",
+  "locatorValue": "iframeWrapper"
+ },
+  "DASHBOARD_INSIGHT": {
+    "locatorType": "css",
+    "locatorValue": ".mdc-tab-indicator--active"
+  },
+  "ASSET_INSIGHT": {
+    "locatorType": "xpath",
+    "locatorValue": "//span[text()='Asset Insights']"
+  }
+}

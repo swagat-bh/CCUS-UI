@@ -44,7 +44,7 @@ public class AlertRuleApiSteps {
   public void alert_rule_api_f1(Integer p0) {
     ALERT___RULE_API_TESTER.alert_rule_api_f1(p0);
   }
-  @Then("alert api response should contain status code {int} with required description for tenant id")
+  @Then("alert api response should contain status code {int} with required description for missing token")
   public void alert_rule_api_f2(Integer p0) {
     ALERT___RULE_API_TESTER.alert_rule_api_f2(p0);
   }

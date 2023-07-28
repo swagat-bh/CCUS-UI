@@ -1,0 +1,28 @@
+{
+  "version": 2,
+  "url": "https://service1.ccus-dev.npiam.bakerhughes.com",
+  "endPoint": "/auth/realms/ccus/protocol/openid-connect/token",
+  "metaInfo": {},
+  "apiData": {
+    "post:generate_token": {
+      "request": {
+        "headers": {
+          "Content-Type": [ "application/x-www-form-urlencoded" ]
+        },
+        "body": {
+          "client_id": "AppShell",
+          "client_secret": "3pnW34CRk3D7YsCqfEnnYOeQya0w0mdu",
+          "grant_type": "password",
+          "username": "test",
+          "password": "test@123"
+        }
+      },
+      "response": {
+        "headers": {},
+        "body": {},
+        "statusCode": "200"
+      }
+    }
+  }
+}
+

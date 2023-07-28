@@ -49,7 +49,7 @@
   },
   "cucumber": {
     "features": "classpath:Features",
-    "suites": "@CCUS_APP_UI_TEST and @Test",
+    "suites": "@API and @Test",
     "xml": "junit:cucumber-reports/Cucumber.xml",
     "json": "json:cucumber-reports/Cucumber.json",
     "html": "html:cucumber-reports/Cucumber.html",
@@ -62,9 +62,9 @@
     }
   },
   "data_UI": {
-    "url": "https://ccus.np-0000183.npause1.bakerhughes.com/",
+    "url": "https://ccus-dev.npiam.bakerhughes.com/#/login",
     "emailId": "",
-    "username": "testuser2",
+    "username": "test",
     "password": "test@123"
   },
     "user1": {

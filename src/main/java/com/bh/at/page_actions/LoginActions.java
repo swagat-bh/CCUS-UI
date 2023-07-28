@@ -55,11 +55,11 @@ public class LoginActions implements ILogin {
 
         LOG.info("com.bh.at.step.Login to CCUS Started ");
         appPage.pause(3000);
-        if(appPage.getCurrentUrl().contains("login"))
+        if(appPage.getCurrentUrl().contains("service1.ccus-dev.npiam.bakerhughes.com"))
         {
-            uiAction.getElement(INPUT, PAGE, "USERNAME").sendKeys(getEnvParam("data_UI/username", ""));
-            uiAction.getElement(INPUT, PAGE, "PASSWORD").sendKeys(getEnvParam("data_UI/password",""));
-            uiAction.getElement(BUTTON, PAGE, "NEXT_BUTTON").click();
+            uiAction.getElement(INPUT, PAGE, "USERNAME_NEW").sendKeys(getEnvParam("data_UI/username", ""));
+            uiAction.getElement(INPUT, PAGE, "PASSWORD_NEW").sendKeys(getEnvParam("data_UI/password",""));
+            uiAction.getElement(BUTTON, PAGE, "NEXT_BUTTON_NEW").click();
 
         }
 
