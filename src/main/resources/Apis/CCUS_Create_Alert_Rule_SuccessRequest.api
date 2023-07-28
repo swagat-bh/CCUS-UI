@@ -1,20 +1,22 @@
 {
     "version": 2,
-    "url": "https://ccus.np-0000183.npause1.bakerhughes.com/",
+    "url": "https://ccus-dev.npiam.bakerhughes.com/",
     "endPoint": "alert-mgmt-svc/api/v1/alert-rule",
     "metaInfo": {},
     "apiData": {
         "post:alert_rule_api": {
             "request": {
                 "headers": {
-                    "Content-Type": ["application/json"],
-                    "tenant":[ "d4197c07-46d8-42f6-bca9-8bdfc8e5a6d7" ]
+                  "Content-Type": [
+                    "application/json"
+                  ],
+                  "Authorization": []
                 },
                 "body": {
-					
+
 					"name": "",
 
-					"description": "test des", 
+					"description": "test des",
 
 					"severity": "H",
 
@@ -35,17 +37,17 @@
 					"operator": "+",
 
 					"threshold": 12,
-             
+
 					"class": "testClass",
-   
+
 					"duration": 3,
-            
+
 					"source_type": "testsource"
 
 					}
 
 								]
-							
+
 				}
             },
             "response": {

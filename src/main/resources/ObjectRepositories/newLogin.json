@@ -7,6 +7,18 @@
     "locatorType": "css",
     "locatorValue": "#password"
   },
+  "USERNAME_NEW": {
+    "locatorType": "css",
+    "locatorValue": "#username"
+  },
+  "PASSWORD_NEW": {
+    "locatorType": "css",
+    "locatorValue": "#password"
+  },
+  "NEXT_BUTTON_NEW": {
+    "locatorType": "xpath",
+    "locatorValue": "//input[@name='login']"
+  },
   "CONFIRM_COOKIE": {
     "locatorType": "css",
     "locatorValue": ".bh-button__label.typography--button-link-small"
